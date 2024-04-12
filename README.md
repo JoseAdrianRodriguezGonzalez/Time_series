@@ -6,7 +6,7 @@ In this time, will be analysed the temperature respect the time.
 ## Getting the data.
 >To obtain the data, it will use a circuit to make continue measures of the temperature and humidity with an Arduino Uno, a sensor DHT-11, a reader CARD-SD and a LCD to display the data when it'll not be used on an environment which allows to print the data obtained by the sensor.
 >Here it is the diagram
->[Arduino diagram]!(https://github.com/JoseAdrianRodriguezGonzalez/Time_series/blob/main/Electronic_part/diagram.png)
+>![Arduino diagram](https://github.com/JoseAdrianRodriguezGonzalez/Time_series/blob/main/Electronic_part/diagram.png)
 
 
 >[!IMPORTANT]
