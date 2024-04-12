@@ -1,3 +1,3 @@
 #Datasets
 >[!IMPORTANT] 
->You can find the dataset implementen or generated
+>You can find the dataset implemented or generated
