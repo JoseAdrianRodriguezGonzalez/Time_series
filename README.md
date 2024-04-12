@@ -4,7 +4,7 @@ In this time, will be analysed the temperature respect the time.
  ## The issue
 >April and May use to be the warmest and driest months of the year so it requires to make a compilation of the temperature and humidity on a room to figure out if it'll be useful to implement a system which can make the room change the temperature & humidity conditions for the people's comodity who's living there or will stay for a long time in a specific room or closed space.
 ## Getting the data.
->To obtain the data, it will use a circuito to make continue measures of the temperatura and humidity with an Arduino Uno, a sensor DHT-11, a reader CARD-SD and a LCD to display the data when it'll not be used on an environment which allows to print the data obtained by the sensor.
+>To obtain the data, it will use a circuit to make continue measures of the temperatura and humidity with an Arduino Uno, a sensor DHT-11, a reader CARD-SD and a LCD to display the data when it'll not be used on an environment which allows to print the data obtained by the sensor.
 
 
 >[!IMPORTANT]
