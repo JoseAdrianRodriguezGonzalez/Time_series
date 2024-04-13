@@ -30,7 +30,7 @@ But, if you want to understand how it works each module or sensor, it'll be link
 >-Humidity
 
 >-Date
->
+
 >[!NOTE]
 >this csv can be manipulated at the way that it can fix at your needs or at least as practical dataset to study statistics or probability as the same time, any branch related with them.
 ## Data Analysis.
