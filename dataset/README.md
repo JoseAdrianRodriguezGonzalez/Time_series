@@ -2,7 +2,7 @@
 >
 >[!IMPORTANT]
 >You can find here the dataset implemented or generated
->
+<
 >[!NOTE]
 >The file called DATASET.csv that has been added to this folder,will contain the data analysed.
 >The format of the data is:
