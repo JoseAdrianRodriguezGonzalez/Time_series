@@ -52,7 +52,11 @@ void setup() {
   initRTC();
   initDHT();
   initSDCARD();
-  WritingFile();
+  int k=1;
+  while(k<=5){
+      WritingFile(k);
+      k++;
+  }
 
 }
 void loop() {
@@ -153,9 +157,10 @@ void obtainingData(File archivo,int i,DateTime fecha){
   WriteBody(archivo,i,TEMPERATURA,HUMEDAD,day,month,year,hour,minute,second);
   
 }
-void WritingFile(){
-  File archivo= SD.open("dataset.csv", FILE_WRITE); //El archivo, abrirá y creará un documento llamado "TH.txt", y con la función "FILE_WRITE"
-  File archivoexiste=SD.open("dataset.csv");
+void WritingFile(int k){
+  String name="dataset"+String(k)+".csv";
+  File archivo= SD.open(name, FILE_WRITE); //El archivo, abrirá y creará un documento llamado "TH.txt", y con la función "FILE_WRITE"
+  File archivoexiste=SD.open(name);
   DateTime fecha =rtc.now(); 
   lcd.clear();
   if (archivo) {    //Entramos a un condicional if del archivo si es correcto.... Si es incorrecto...
@@ -175,7 +180,8 @@ void WritingFile(){
     }
     else{
       header(archivo,fecha);
-      for(i; i < 8641; i++){    //Y se crea un bucle for con un limite de 31 datos distinctos que dichos, se escibirán en el archivo TH.txt
+      for(i; i < 8641
+      ; i++){    //Y se crea un bucle for con un limite de 31 datos distinctos que dichos, se escibirán en el archivo TH.txt
         fecha =rtc.now();
         obtainingData(archivo,i,fecha);
         delay(10000); //Las veces que lo haga será en cada segundo
