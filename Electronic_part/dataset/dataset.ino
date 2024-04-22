@@ -53,7 +53,7 @@ void setup() {
   initDHT();
   initSDCARD();
   int k=1;
-  while(k<=5){
+  while(k<=7){
       WritingFile(k);
       k++;
   }
