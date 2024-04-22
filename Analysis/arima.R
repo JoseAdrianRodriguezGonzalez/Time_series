@@ -1,0 +1,96 @@
+#Librerias y paquetes
+#install.packages("tseries")
+#install.packages("astsa")
+#install.packages("forecast")
+#install.packages("tidyverse")
+#install.packages("lubridate")
+#install.packages("foreign")
+#install.packages("quantmod")
+
+library(astsa)
+library(tseries)
+library(lubridate)
+library(tidyverse)
+library(forecast)
+library(foreign)
+library(quantmod)
+library(readr)
+
+
+#file.choose()
+
+###### Graficas raficas por dias #####
+DATASET<-read_csv("C:\\Users\\LENOVO THINKPAD\\Documents\\Universidad\\2do Semestre\\Probabilidad\\proyecto arima\\Dias\\DATASET.CSV")
+DATASET1<-read_csv("C:\\Users\\LENOVO THINKPAD\\Documents\\Universidad\\2do Semestre\\Probabilidad\\proyecto arima\\Dias\\DATASET1.CSV")
+DATASET2<-read_csv("C:\\Users\\LENOVO THINKPAD\\Documents\\Universidad\\2do Semestre\\Probabilidad\\proyecto arima\\Dias\\DATASET2.CSV")
+DATASET3<-read_csv("C:\\Users\\LENOVO THINKPAD\\Documents\\Universidad\\2do Semestre\\Probabilidad\\proyecto arima\\Dias\\DATASET3.CSV")
+DATASET4<-read_csv("C:\\Users\\LENOVO THINKPAD\\Documents\\Universidad\\2do Semestre\\Probabilidad\\proyecto arima\\Dias\\DATASET4.CSV")
+DATASET5<-read_csv("C:\\Users\\LENOVO THINKPAD\\Documents\\Universidad\\2do Semestre\\Probabilidad\\proyecto arima\\Dias\\DATASET5.CSV")
+plotanydata<-function(dataframe,titledata){
+  dataframe$DATE=format(as.POSIXct(dataframe$DATE,format="%d/%m/%Y %H:%M"))
+  dataframe$date=as.Date(dataframe$DATE)
+  dataframe$time=format(as.POSIXct(dataframe$DATE),format="%H:%M")
+  h <- seconds(hm(dataframe$time))
+  plot(dataframe$Humidity,type = "l",lwd = 2, col = "red", xlab = "Iteraciones por 10 segundos", ylab = "Humedad")
+  title(main=titledata)
+  plot(dataframe$Temperature, type = "l",lwd = 2, col = "blue", xlab = "Iteraciones por 10 segundos", ylab = "Temperatura")
+  title(main=titledata)
+}
+lookingForAnomalies<-function(dataframe){
+  print("The maximum value from temperature and humidity are: ")
+  print("Temperature")
+  print(max(dataframe$Temperature))
+  print("Humidity")
+  print(max(dataframe$Humidity))
+  print("The minimum value from temperature and humidity are: ")
+  print("Temperature")
+  print(min(dataframe$Temperature))
+  print("Humidity")
+  print(min(dataframe$Humidity))
+  print("Existen nans en la temperatura")
+  print(which(is.nan(dataframe$Temperature)))
+  print("Existen nans en la humedad")
+  print(which(is.nan(dataframe$Humidity)))
+}
+#first dataset fridaay-saturday
+print("First dataset")
+plotanydata(DATASET,"Friday-Saturday")
+lookingForAnomalies(DATASET)
+#Second dataset sunday-monday
+print("second dataset")
+plotanydata(DATASET1,"Sunday-Monday")
+lookingForAnomalies(DATASET1)
+#third dataset monday-tuesday
+print("Third dataset")
+plotanydata(DATASET2,"Monday-Tuesday")
+lookingForAnomalies(DATASET2)
+#fourth dataset tuesday-wednesday
+print("Fourth dataset")
+plotanydata(DATASET3,"Tuesday-wednesday")
+lookingForAnomalies(DATASET3)
+#FIFTH DATASET
+print("Fifth dataset")
+plotanydata(DATASET4,"Wednesday-Thursday")
+lookingForAnomalies(DATASET4)
+#sixTH DATASET
+print("Sixth dataset")
+plotanydata(DATASET5,"Thursday-Friday")
+lookingForAnomalies(DATASET5)
+
+
+##### COMBINAR LOS DATASETS
+
+Data_full <- rbind (DATASET,DATASET1,DATASET2,DATASET3,DATASET4,DATASET5)
+
+View(Data_full)
+
+Z
+#####             A R I M A R         ######
+#attach(Data_full)
+#Cambiar nuestro Data frame a una serie de tiempo 
+
+Data_.ts <- ts(Data_full[-1,1],start = c(2024,1),frequency = 8639)
+
+print(Data_.ts)
+plot(Data_.ts, main = "Serie de tiempo")
+
