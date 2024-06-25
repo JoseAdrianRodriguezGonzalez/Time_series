@@ -35,6 +35,6 @@ But, if you want to understand how it works each module or sensor, it'll be link
 >this csv can be manipulated at the way that it can fix at your needs or at least as practical dataset to study statistics or probability as the same time, any branch related with them.
 ## Data Analysis.
 >
->[!WARNING]
->At this point it'll be written the way that it has been studied......(METHODOLOGY IN R)
+>The data analysis is contained on the folder *Analysis* that you can check hear [Analysis](https://github.com/JoseAdrianRodriguezGonzalez/Time_series/tree/main/Analysis)
+>As an introduction, it was implemented an ARIMA process.
 
